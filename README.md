@@ -56,11 +56,11 @@ mvn archetype:generate -DarchetypeGroupId=org.terasoluna.gfw.blank -DarchetypeAr
 
 ### web.xml
 
-web.xmlからspring securityに関する記述を削除する。
+web.xmlからspring securityに関する記述を削除する。<br>
 Wildfly adapterに関する記述を追加する。
 
 ~~~
-    <!-- oidc.json -->
+    <!-- 追加する定義 -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>secured</web-resource-name>
@@ -103,6 +103,7 @@ Jakarta EE 8に対応している。Jakarta EE 10は未対応
 ### url
 
 http://localhost:8180/SampleWebApp/
+
 http://localhost:8180/SampleWebApp/secured
 
 ### IDToken, AccessTokenの取得
