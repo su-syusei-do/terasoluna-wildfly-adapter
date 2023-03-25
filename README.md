@@ -2,12 +2,12 @@
 
 ## JDK
 
-Amazon Correto 11
+Amazon Correto 11<br>
 https://docs.aws.amazon.com/ja_jp/corretto/latest/corretto-11-ug/downloads-list.html
 
 ## Keycloak
 
-Keycloak 21.0.1
+Keycloak 21.0.1<br>
 https://www.keycloak.org/downloads
 
 ~~~
@@ -21,7 +21,7 @@ http://localhost:8080/
 
 ## WildFly
 
-WildFly 27.0.1
+WildFly 26.1.3.Final<br>
 https://www.wildfly.org/downloads/
 
 standalone.xml
@@ -29,9 +29,7 @@ standalone.xml
 <socket-binding name="http" port="${jboss.http.port:8180}"/>
 ~~~
 
-### Wildfly 27はJakarta EE 10、Terasoluna Serverframeworkはこれに対応していない
-
-Wildfly 26を利用する
+**Wildfly 27はJakarta EE 10、Terasoluna Serverframeworkはこれに対応していない**
 
 ### 起動
 
