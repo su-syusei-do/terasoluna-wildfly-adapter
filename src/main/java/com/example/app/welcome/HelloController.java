@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.*;
-import java.security.Principal;
 import org.wildfly.security.http.oidc.*;
 import org.apache.commons.lang3.builder.*;
 

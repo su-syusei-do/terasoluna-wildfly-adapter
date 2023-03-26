@@ -1,0 +1,19 @@
+<jboss-deployment-structure>
+    <deployment>
+        <exclusions>
+            <module name="org.hibernate.validator" /><!-- (1) -->
+            <module name="org.slf4j" /><!-- (2) -->
+            <module name="javax.inject.api" /><!-- (3) -->
+            <module name="org.jboss.logging" /><!-- (4) -->
+            <module name="javax.validation.api" /><!-- (5) -->
+        </exclusions>
+        <dependencies>
+            <module name="javax.jms.api" /><!-- (6) -->
+        </dependencies>
+        <exclude-subsystems>
+            <subsystem name="jaxrs" /><!-- (7) -->
+            <subsystem name="jpa" /><!-- (8) -->
+            <subsystem name="logging" /><!-- (9) -->
+        </exclude-subsystems>
+    </deployment>
+</jboss-deployment-structure>

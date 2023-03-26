@@ -122,6 +122,11 @@
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
 
+    <context-param>
+        <param-name>oidc.config.resolver</param-name>
+        <param-value>com.example.MyCustomConfigResolver</param-value>
+    </context-param>
+
     <!-- oidc.json -->
     <security-constraint>
         <web-resource-collection>

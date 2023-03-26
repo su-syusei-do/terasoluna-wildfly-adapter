@@ -27,7 +27,7 @@
         <url>http://terasoluna.org</url>
     </organization>
     <build>
-        <finalName>SampleWebApp</finalName>
+        <finalName>${warName}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -68,7 +68,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${org.apache.maven.plugins.maven-war-plugin.version}</version>
                     <configuration>
-                        <warName>${project.artifactId}</warName>
+                        <warName>${warName}</warName>
                         <archive>
                             <addMavenDescriptor>false</addMavenDescriptor>
                             <manifest>
@@ -261,4 +261,19 @@
         <encoding>UTF-8</encoding>
         <java-version>1.8</java-version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>sample1</id>
+            <properties>
+                <warName>SampleWebApp</warName>
+            </properties>
+        </profile>
+        <profile>
+            <id>sample2</id>
+            <properties>
+                <warName>SampleWebApp2</warName>
+            </properties>
+        </profile>
+    </profiles>
 </project>
