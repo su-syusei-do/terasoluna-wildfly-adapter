@@ -154,6 +154,21 @@ pom.xml
         </dependency>
 ~~~
 
+### ログアウト
+
+`http://auth-server/realms/{realm-name}/protocol/openid-connect/logout`
+
+post_logout_redirect_uriパラメータでログアウト後の遷移先を指定する。
+
+client_idを一緒に指定すること。
+
+#### src/main/webapp/WEB-INF/views/welcome/secured.jsp
+~~~
+    <!-- ログアウトリンク -->
+    <a href="http://localhost:8080/realms/sample1/protocol/openid-connect/logout?post_logout_redirect_uri=http://localhost:8180/SampleWebApp/&amp;client_id=sample-web-app">Logout</a>
+
+~~~
+
 ### マルチテナント対応
 
 複数のRealmに1つのwarファイルで対応する。
