@@ -156,16 +156,21 @@ pom.xml
 
 ### ログアウト
 
-`http://auth-server/realms/{realm-name}/protocol/openid-connect/logout`
+HttpServletRequest.logout()を実行する。
 
-post_logout_redirect_uriパラメータでログアウト後の遷移先を指定する。
-
-client_idを一緒に指定すること。
+#### src/main/java/com/example/app/welcome/HelloController.java
+~~~
+    @RequestMapping(value = "/logout", method = {RequestMethod.GET, RequestMethod.POST})
+    public String logout(HttpServletRequest request) throws ServletException {
+        request.logout();
+        return "redirect:/";
+    }
+~~~
 
 #### src/main/webapp/WEB-INF/views/welcome/secured.jsp
 ~~~
     <!-- ログアウトリンク -->
-    <a href="http://localhost:8080/realms/sample1/protocol/openid-connect/logout?post_logout_redirect_uri=http://localhost:8180/SampleWebApp/&amp;client_id=sample-web-app">Logout</a>
+    <a href="${pageContext.request.contextPath}/logout">Logout</a>
 
 ~~~
 
