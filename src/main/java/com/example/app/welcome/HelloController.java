@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.*;
 import javax.servlet.http.*;
 import org.wildfly.security.http.oidc.*;
 import org.apache.commons.lang3.builder.*;
@@ -53,4 +54,14 @@ public class HelloController {
 
         return "welcome/secured";
     }
+    
+    @RequestMapping(value = "/logout", method = {RequestMethod.GET, RequestMethod.POST})
+    public String seccured(Locale locale, Model model, HttpServletRequest request) throws ServletException {
+        logger.info("Logout...");
+        
+        request.logout();
+        
+        return "redirect:/";
+    }
+    
 }
